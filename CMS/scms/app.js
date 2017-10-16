@@ -4,4 +4,8 @@ var mongodb=require('./config/mongoose');
 var db=mongodb();
 var app=express();
 
-module.exports=app;
+var config = require('./config/config');
+
+app.listen(config.port, function(){
+    console.log('app started, listening on port:', config.port);
+});
